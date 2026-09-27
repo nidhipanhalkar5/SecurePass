@@ -1,0 +1,9 @@
+backend/securepass.db
+backend/server
+backend/create_hash
+backend/create_hash.cpp
+backend/server.cpp.before-auth
+frontend/script.js.backup
+*.db
+*.sqlite
+*.sqlite3

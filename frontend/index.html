@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>SecurePass Password Manager</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css">
+
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <div class="login-box">
+
+            <div class="logo">
+                🔐
+            </div>
+
+
+            <h1>
+                SecurePass
+            </h1>
+
+
+            <p class="subtitle">
+                Your Secure Password Manager
+            </p>
+
+
+            <label>
+                Master Password
+            </label>
+
+
+            <div class="password-container">
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter master password"
+                >
+
+
+                <button
+                    type="button"
+                    onclick="showPassword()">
+
+                    👁
+
+                </button>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="unlock-button"
+                onclick="login()">
+
+                Unlock Vault
+
+            </button>
+
+
+            <p id="message"></p>
+
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
