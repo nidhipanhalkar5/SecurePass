@@ -282,7 +282,7 @@ int main() {
 
     CROW_ROUTE(app, "/")
     ([] {
-        std::ifstream file("../frontend/index.html");
+        std::ifstream file("frontend/index.html");
         std::string content((std::istreambuf_iterator<char>(file)),
                             std::istreambuf_iterator<char>());
         crow::response res(content);
@@ -292,7 +292,7 @@ int main() {
 
     CROW_ROUTE(app, "/index.html")
     ([] {
-        std::ifstream file("../frontend/index.html");
+        std::ifstream file("frontend/index.html");
         std::string content((std::istreambuf_iterator<char>(file)),
                             std::istreambuf_iterator<char>());
         crow::response res(content);
@@ -302,7 +302,7 @@ int main() {
 
     CROW_ROUTE(app, "/dashboard.html")
     ([] {
-        std::ifstream file("../frontend/dashboard.html");
+        std::ifstream file("frontend/dashboard.html");
         std::string content((std::istreambuf_iterator<char>(file)),
                             std::istreambuf_iterator<char>());
         crow::response res(content);
@@ -312,7 +312,7 @@ int main() {
 
     CROW_ROUTE(app, "/add-password.html")
     ([] {
-        std::ifstream file("../frontend/add-password.html");
+        std::ifstream file("frontend/add-password.html");
         std::string content((std::istreambuf_iterator<char>(file)),
                             std::istreambuf_iterator<char>());
         crow::response res(content);
@@ -322,7 +322,7 @@ int main() {
 
     CROW_ROUTE(app, "/edit-password.html")
     ([] {
-        std::ifstream file("../frontend/edit-password.html");
+        std::ifstream file("frontend/edit-password.html");
         std::string content((std::istreambuf_iterator<char>(file)),
                             std::istreambuf_iterator<char>());
         crow::response res(content);
@@ -332,7 +332,7 @@ int main() {
 
     CROW_ROUTE(app, "/style.css")
     ([] {
-        std::ifstream file("../frontend/style.css");
+        std::ifstream file("frontend/style.css");
         std::string content((std::istreambuf_iterator<char>(file)),
                             std::istreambuf_iterator<char>());
         crow::response res(content);
@@ -342,7 +342,7 @@ int main() {
 
     CROW_ROUTE(app, "/script.js")
     ([] {
-        std::ifstream file("../frontend/script.js");
+        std::ifstream file("frontend/script.js");
         std::string content((std::istreambuf_iterator<char>(file)),
                             std::istreambuf_iterator<char>());
         crow::response res(content);
