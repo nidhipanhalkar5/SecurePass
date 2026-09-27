@@ -36,6 +36,42 @@ int main() {
 
     const char* db_file = "securepass.db";
 
+    sqlite3* init_db = nullptr;
+
+    if (sqlite3_open(db_file, &init_db) == SQLITE_OK) {
+        const char* create_tables = R"SQL(
+            CREATE TABLE IF NOT EXISTS passwords (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                website TEXT NOT NULL,
+                url TEXT,
+                username TEXT NOT NULL,
+                password TEXT NOT NULL,
+                notes TEXT
+            );
+
+            CREATE TABLE IF NOT EXISTS auth (
+                id INTEGER PRIMARY KEY CHECK (id = 1),
+                password_hash TEXT NOT NULL
+            );
+        )SQL";
+
+        char* error_message = nullptr;
+
+        sqlite3_exec(
+            init_db,
+            create_tables,
+            nullptr,
+            nullptr,
+            &error_message
+        );
+
+        if (error_message) {
+            sqlite3_free(error_message);
+        }
+
+        sqlite3_close(init_db);
+    }
+
 
     CROW_ROUTE(app, "/api/login")
     .methods(crow::HTTPMethod::POST)
