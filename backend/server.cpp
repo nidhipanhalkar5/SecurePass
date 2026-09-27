@@ -2,6 +2,7 @@
 #include <sqlite3.h>
 #include <string>
 #include <fstream>
+#include <cstdlib>
 #include <sodium.h>
 
 void add_cors(crow::response& res) {
@@ -349,7 +350,9 @@ int main() {
         return res;
     });
 
-    app.port(18080).multithreaded().run();
+    const char* port_env = std::getenv("PORT");
+    int port = port_env ? std::stoi(port_env) : 18080;
+    app.bindaddr("0.0.0.0").port(port).multithreaded().run();
 
     return 0;
 }
